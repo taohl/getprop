@@ -4,7 +4,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.widget.TextView;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView taohltext = (TextView) findViewById(R.id.taohl_view);
+        TextView taohltext = findViewById(R.id.taohl_view);
         taohltext.setMovementMethod(ScrollingMovementMethod.getInstance());
 
         BufferedReader reader = null;
@@ -53,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     output.append(buffer, 0, read);
                 reader.close();
                 content = output.toString();
+                content = content.replaceAll("\r|\n", "");
 
                 map.put(info[i], content);
             }
@@ -60,8 +60,15 @@ public class MainActivity extends AppCompatActivity {
             // 把 map 的 key 和 value 都输出到所创建的 textview 上。
             String buffer1 = "";
             for (String key : map.keySet())
-                buffer1 = buffer1 + key + " = " + map.get(key);
+                buffer1 = buffer1 + key + " = " + map.get(key) + "\n";
             taohltext.setText(buffer1);
+
+            for (String key : map.keySet()) {
+                if (key == info[0]) {
+                    TextView textView_sn = findViewById(R.id.textview_sn);
+                    textView_sn.setText(map.get(key));
+                }
+            }
         } catch (IOException e) {
                 e.printStackTrace();
         }
