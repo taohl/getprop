@@ -1,3 +1,39 @@
 <resources>
     <string name="app_name">getprop</string>
+
+    <!-- tablerow frist row name -->
+    <string name="sn">SN</string>
+    <string name="psn">PSN</string>
+    <string name="imei1">IMEI1</string>
+    <string name="imei2">IMEI2</string>
+    <string name="meid">MEID</string>
+    <string name="flymever">Flyme 版本号</string>
+    <string name="buildtype">BUILD TYPE</string>
+    <string name="hwver">硬件版本号</string>
+    <string name="hwsec">硬件加密状态</string>
+    <string name="bllock">刷机锁状态</string>
+    <string name="rootstatus">ROOT 状态</string>
+
+    <!-- tablerow secend row name -->
+    <string name="na">N/A</string>>
+
+    <!-- tablerow secend row name : hwver-->
+    <string name="hwver_b0">B0</string>
+    <string name="hwver_b1">B1</string>
+    <string name="hwver_b2">B2</string>
+    <string name="hwver_b2_1">B2.1</string>
+    <string name="hwver_npi">NPI</string>
+    <string name="hwver_mp">MP</string>
+
+    <!-- tablerow secend row name : hwsec status -->
+    <string name="unsec">未加密</string>>
+    <string name="sec">已加密</string>
+
+    <!-- tablerow secend row name : lock status -->
+    <string name="unlock">unlock</string>>
+    <string name="lock">lock</string>
+
+    <!-- tablerow secend row name : root status -->
+    <string name="unroot">unroot</string>>
+    <string name="root">root</string>
 </resources>
