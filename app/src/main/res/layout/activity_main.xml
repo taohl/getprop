@@ -6,34 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/taohl_view"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="254dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginBottom="40dp"
-        android:background="@color/colorBlue"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:stretchColumns="1"
-        android:padding="1dp"
-        android:background="@drawable/shape_frame_tblr">
+        <TextView
+            android:id="@+id/taohl_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlue"
+            android:scrollbars="vertical"/>
 
-        <TableRow
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:padding="1dp"
+            android:background="@drawable/shape_frame_tblr">
+
+            <TableRow
             android:stretchColumns="1">
 
             <TextView
                 android:layout_width="160dp"
                 android:background="@drawable/shape_frame_tblr"
-                android:text="SN"
+                android:text="@string/sn"
                 android:textAlignment="center"
                 android:textSize="14sp"
                 android:textStyle="bold"/>
@@ -43,6 +41,187 @@
                 android:textAlignment="center"
                 android:textSize="14sp"
                 android:textStyle="bold"/>
-        </TableRow>
-    </TableLayout>
+            </TableRow>
+
+            <TableRow
+            android:stretchColumns="1">
+
+            <TextView
+                android:layout_width="160dp"
+                android:background="@drawable/shape_frame_tblr"
+                android:text="@string/psn"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textview_psn"
+                android:background="@drawable/shape_frame_tblr"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow
+            android:stretchColumns="1">
+
+            <TextView
+                android:layout_width="160dp"
+                android:background="@drawable/shape_frame_tblr"
+                android:text="@string/imei1"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textview_imei1"
+                android:background="@drawable/shape_frame_tblr"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow
+            android:stretchColumns="1">
+
+            <TextView
+                android:layout_width="160dp"
+                android:background="@drawable/shape_frame_tblr"
+                android:text="@string/imei2"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textview_imei2"
+                android:background="@drawable/shape_frame_tblr"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow
+            android:stretchColumns="1">
+
+            <TextView
+                android:layout_width="160dp"
+                android:background="@drawable/shape_frame_tblr"
+                android:text="@string/meid"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textview_meid"
+                android:background="@drawable/shape_frame_tblr"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow
+            android:stretchColumns="1">
+
+            <TextView
+                android:layout_width="160dp"
+                android:background="@drawable/shape_frame_tblr"
+                android:text="@string/flymever"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textview_flymever"
+                android:background="@drawable/shape_frame_tblr"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow
+            android:stretchColumns="1">
+
+            <TextView
+                android:layout_width="160dp"
+                android:background="@drawable/shape_frame_tblr"
+                android:text="@string/buildtype"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textview_buildtype"
+                android:background="@drawable/shape_frame_tblr"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow
+            android:stretchColumns="1">
+
+            <TextView
+                android:layout_width="160dp"
+                android:background="@drawable/shape_frame_tblr"
+                android:text="@string/hwver"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textview_hwver"
+                android:background="@drawable/shape_frame_tblr"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow
+            android:stretchColumns="1">
+
+            <TextView
+                android:layout_width="160dp"
+                android:background="@drawable/shape_frame_tblr"
+                android:text="@string/hwsec"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textview_hwsec"
+                android:background="@drawable/shape_frame_tblr"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow
+            android:stretchColumns="1">
+
+            <TextView
+                android:layout_width="160dp"
+                android:background="@drawable/shape_frame_tblr"
+                android:text="@string/bllock"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textview_bllock"
+                android:background="@drawable/shape_frame_tblr"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            </TableRow>
+
+            <TableRow
+            android:stretchColumns="1">
+
+            <TextView
+                android:layout_width="160dp"
+                android:background="@drawable/shape_frame_tblr"
+                android:text="@string/rootstatus"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/textview_root"
+                android:background="@drawable/shape_frame_tblr"
+                android:textAlignment="center"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

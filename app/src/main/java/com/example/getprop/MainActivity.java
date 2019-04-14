@@ -64,9 +64,110 @@ public class MainActivity extends AppCompatActivity {
             taohltext.setText(buf1.toString());
 
             for (String key : map.keySet()) {
+                String buf_value = map.get(key);
+
+                // get sn
                 if (key.equals(info[0])) {
-                    TextView textView_sn = findViewById(R.id.textview_sn);
-                    textView_sn.setText(map.get(key));
+                    TextView textView = findViewById(R.id.textview_sn);
+                    textView.setText(map.get(key));
+                }
+                // get psn
+                if (key.equals(info[1])) {
+                    TextView textView = findViewById(R.id.textview_psn);
+                    textView.setText(map.get(key));
+                }
+                // get imei1
+                if (key.equals(info[2])) {
+                    TextView textView = findViewById(R.id.textview_imei1);
+                    textView.setText(map.get(key));
+                }
+                // get imei2
+                if (key.equals(info[3])) {
+                    TextView textView = findViewById(R.id.textview_imei2);
+                    textView.setText(map.get(key));
+                }
+                // get meid
+                if (key.equals(info[4])) {
+                    TextView textView = findViewById(R.id.textview_meid);
+                    textView.setText(map.get(key));
+                }
+                // get dailybuild version
+                if (key.equals(info[5])) {
+                    TextView textView = findViewById(R.id.textview_flymever);
+                    textView.setText(map.get(key));
+                }
+                // get pcb version
+                if (key.equals(info[6])) {
+                    TextView textView = findViewById(R.id.textview_hwver);
+                    switch (buf_value) {
+                        case "0x2":
+                            textView.setText(getString(R.string.hwver_b0));
+                            break;
+                        case "0x3":
+                            textView.setText(getString(R.string.hwver_b1));
+                            break;
+                        case "0x4":
+                            textView.setText(getString(R.string.hwver_b2));
+                            break;
+                        case "0x5":
+                            textView.setText(getString(R.string.hwver_b2_1));
+                            break;
+                        case "0x6":
+                            textView.setText(getString(R.string.hwver_npi));
+                            break;
+                        case "0x7":
+                            textView.setText(getString(R.string.hwver_mp));
+                            break;
+                        default:
+                            textView.setText(getString(R.string.na));
+                    }
+                }
+                // get user or userdebug or eng
+                if (key.equals(info[7])) {
+                    TextView textView = findViewById(R.id.textview_buildtype);
+                    textView.setText(map.get(key));
+                }
+                // get secure  1：开启 0：未开启
+                if (key.equals(info[8])) {
+                    TextView textView = findViewById(R.id.textview_hwsec);
+                    switch (buf_value) {
+                        case "0":
+                            textView.setText(getString(R.string.unsec));
+                            break;
+                        case "1":
+                            textView.setText(getString(R.string.sec));
+                            break;
+                        default:
+                            textView.setText(getString(R.string.na));
+                    }
+                }
+                // get lock status 1: unlock 0:lock
+                if (key.equals(info[9])) {
+                    TextView textView = findViewById(R.id.textview_bllock);
+                    switch (buf_value) {
+                        case "0":
+                            textView.setText(getString(R.string.lock));
+                            break;
+                        case "1":
+                            textView.setText(getString(R.string.unlock));
+                            break;
+                        default:
+                            textView.setText(getString(R.string.na));
+                    }
+                }
+                // get root status 1: root 0: unroot
+                if (key.equals(info[10])) {
+                    TextView textView = findViewById(R.id.textview_root);
+                    switch (buf_value) {
+                        case "0":
+                            textView.setText(getString(R.string.unroot));
+                            break;
+                        case "1":
+                            textView.setText(getString(R.string.root));
+                            break;
+                        default:
+                            textView.setText(getString(R.string.na));
+                    }
                 }
             }
         } catch (IOException e) {
