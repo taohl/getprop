@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
         TextView taohltext = findViewById(R.id.taohl_view);
         taohltext.setMovementMethod(ScrollingMovementMethod.getInstance());
 
-        BufferedReader reader = null;
-        String content = "";
+        BufferedReader reader;
+        String content;
 
         String[] info = {
                 "ro.meizu.hardware.sn",     //SN
@@ -40,31 +40,31 @@ public class MainActivity extends AppCompatActivity {
         Map<String, String> map = new LinkedHashMap<>();
 
         try {
-            for (int i = 0; i < info.length; i++) {
-                Process process = Runtime.getRuntime().exec("getprop " + info[i]);
+            for (String anInfo : info) {
+                Process process = Runtime.getRuntime().exec("getprop " + anInfo);
                 reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
-                StringBuffer output = new StringBuffer();
-                char[] buffer = new char[1024];
                 int read;
+                char[] buffer = new char[1024];
+                StringBuilder buf = new StringBuilder();
 
                 while ((read = reader.read(buffer)) > 0)
-                    output.append(buffer, 0, read);
+                    buf.append(buffer, 0, read);
                 reader.close();
-                content = output.toString();
+                content = buf.toString();
                 content = content.replaceAll("\r|\n", "");
 
-                map.put(info[i], content);
+                map.put(anInfo, content);
             }
 
             // 把 map 的 key 和 value 都输出到所创建的 textview 上。
-            String buffer1 = "";
+            StringBuilder buf1 = new StringBuilder();
             for (String key : map.keySet())
-                buffer1 = buffer1 + key + " = " + map.get(key) + "\n";
-            taohltext.setText(buffer1);
+                buf1 = buf1.append(key).append(" = ").append(map.get(key)).append("\n");
+            taohltext.setText(buf1.toString());
 
             for (String key : map.keySet()) {
-                if (key == info[0]) {
+                if (key.equals(info[0])) {
                     TextView textView_sn = findViewById(R.id.textview_sn);
                     textView_sn.setText(map.get(key));
                 }
